@@ -47,8 +47,8 @@ def deletePage(page, args):
     text = page.text
 
     # 檢查刪除標記
-    if not re.search(r'{{\s*(Delete|Db-reason|D|Deletebecause|Db|速删|速刪|Speedy|SD|快删|快刪|CSD|QD)\s*\|\s*(O1|G10)\s*}}', text, flags=re.I):
-        return 'cannot find o1 template'
+    if not re.search(r'{{\s*(Delete|Db-reason|D|Deletebecause|Db|速删|速刪|Speedy|SD|快删|快刪|CSD|QD)\s*\|\s*(U1|O1|G10)\s*}}', text, flags=re.I):
+        return 'cannot find u1 template'
 
     logs = list(site.logevents(page=page, total=1, logtype='create'))
     if len(logs) == 0:
